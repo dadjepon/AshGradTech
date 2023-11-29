@@ -46,4 +46,4 @@ def online_process(file_path: str) -> documentai.Document:
 # program driver
 if __name__ == "__main__":
     FILE_PATH = "jakman_solutions_milestone_3.pdf"
-    online_process(file_path=FILE_PATH)
+    print(online_process(file_path=FILE_PATH))
