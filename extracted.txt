@@ -1,0 +1,168 @@
+巴
+Semester 2 2020-2021
+=
+III
+COURSE CODE
+COURSE TITLE
+CREDITS
+GRADE
+ENGL112
+Written and Oral Communication
+1
+A+
+In
+Ga
+MATH141
+Calculus I
+1
+古
+D+
+BUSA161
+Foundations of Design and Entrepreneurship |
+1
+A
+AS111
+Ashesi Success
+0
+P
+CS111
+Introduction to Computing and Information Systems
+1
+A+
+SOAN111
+Leadership Seminar I: What Makes a Good Leader?
+0.5
+B
+CA: 4.5
+CR: 4.5
+CP: 4.5
+GP: 15.00
+GPA: 03.33
+CGPA: 03.33
+Semester 12021-2022
+COURSE CODE
+COURSE TITLE
+CREDITS
+GRADE
+ENGL113
+Text and Meaning
+1
+A
+MATH142
+Calculus II
+1
+B+
+SOAN211
+Leadership Seminar II: Rights, Ethics and Rule of Law
+0.5
+A
+BUSA162
+Foundations of Design and Entrepreneurship II
+1
+A
+CS212
+Computer Programming for CS
+1
+A+
+CA: 4.5
+CR: 4.5
+CP: 4.5
+GP: 17.50
+GPA: 03.89
+CGPA: 03.61
+Semester 2 2021-2022
+COURSE CODE
+COURSE TITLE
+CREDITS
+GRADE
+CS221
+Discrete Structures and Theory
+1
+A
+CS222
+Data Structures and Algorithms
+1
+A
+MATH221
+Statistics
+1
+B+
+SOAN311
+Leadership Seminar III: The Economic Organization of a Good Society
+0.5
+A
+9105313
+Advanced Topics in HR and International Law
+1
+A
+CA: 3.5
+CR: 3.5
+CP: 3.5
+GP: 13.50
+GPA: 03.86
+CGPA: 03.68
+Semester 1 2022-2023
+COURSE CODE
+COURSE TITLE
+CREDITS
+GRADE
+POLS234
+Comparative Politics
+1
+A
+CS323
+Database Management / Database Systems
+1
+B+
+市
+MATH 212
+Linear Algebra
+1
+A
+CS254
+Introduction to Artificial Intelligence
+1
+B+
++
+CS313
+Intermediate Computer Programming
+1
+A
+CA: 5
+CR: 5
+CP: 5
+GP: 19.00
+GPA: 03.80
+CGPA: 03.71
+Semester 2 2022-2023
+COURSE CODE
+COURSE TITLE
+CREDITS
+GRADE
+CS341
+Web Technologies
+1
+A
+BUSA224
+Finance for Non-finance Managers
+1
+B+
+◉◉
+CS331
+Computer Organization and Architecture
+1
+B
+POLS332
+Governance in Africa
+1
+B+
+CS361
+Introduction to Modelling & Simulation
+0.5
+B+
+CA: 4.5
+CR: 4.5
+CP: 4.5
+GP: 15.75
+GPA: 03.50
+CGPA: 03.67
