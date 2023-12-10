@@ -1,9 +1,9 @@
 import json
 import re
-from read_text import process_document_sample as rd
 
 
-def parse_transcript(file_path):
+def parse_transcript() -> json:
+    file_path = "extracted.txt"
     with open(file_path, "r", encoding="utf-8") as file:
         text = file.read()
     
@@ -53,15 +53,3 @@ def parse_transcript(file_path):
                     current_course["credits"] = credits_match.group()
 
     return (json.dumps(transcript_data, indent=4))
-
-FILE_PATH = "trans.pdf"
-output = rd(
-    project_id = "866827155501",
-    location = "us",
-    processor_id = "61abf4ec482095a0",
-    file_path = "trans.pdf",
-    mime_type = "application/pdf",
-    field_mask = "text, layout",
-    processor_version_id = "ad8664f46cdd7d84"
-)
-print(parse_transcript("extracted.txt"))
