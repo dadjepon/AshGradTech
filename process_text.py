@@ -13,8 +13,8 @@ def parse_transcript(file_path):
 
     # Regular expressions for grades and credits
     grade_pattern = re.compile(r"([A-EP][\+\-]?)$")
-    credits_pattern = re.compile(r"(0\.5|0|1)$")
-    course_title_pattern = re.compile(r"^[A-Za-z0-9\s\+\-'|?&/:,]+$")  # Updated course title pattern
+    credits_pattern = re.compile(r"^(?:\d+(?:\.\d+)?)$")
+    course_title_pattern = re.compile(r"^[A-Za-z0-9\s\+\-'|?&/:,]+$")
 
     for line in text.splitlines():
         line = line.strip()
@@ -35,12 +35,12 @@ def parse_transcript(file_path):
             if "course_title" not in current_course and len(line) > 1:
                 current_course["course_title"] = line
                 # Check if the line contains numeric values
-                if any(char.isdigit() or char == '.' for char in line):
-                    credits_match = re.search(r"(0\.5|0|1)", line)
-                    current_course["credits"] = credits_match.group() if credits_match else None
+                if any(char.isdigit() or char.isdecimal() for char in line):
+                    # credits_match = re.search(r"(0\.5|0|1)", line)
+                    current_course["credits"] = credits_match.group() #if credits_match else None
                     current_course["grade"] = None
                 else:
-                    current_course["credits"] = None
+                    current_course["credits"] = "0.5"
                     current_course["grade"] = None
             else:
                 # Use the separate regex patterns for grades and credits
@@ -52,7 +52,7 @@ def parse_transcript(file_path):
                 if credits_match:
                     current_course["credits"] = credits_match.group()
 
-    return transcript_data
+    return (json.dumps(transcript_data, indent=4))
 
 FILE_PATH = "trans.pdf"
 output = rd(
@@ -64,7 +64,4 @@ output = rd(
     field_mask = "text, layout",
     processor_version_id = "ad8664f46cdd7d84"
 )
-transcript_info = parse_transcript("extracted.txt")
-
-# Print the result as JSON
-print(json.dumps(transcript_info, indent=4))
+print(parse_transcript("extracted.txt"))
