@@ -44,32 +44,31 @@ class Student:
         return progress
 
 
-if __name__ == "__main__":
-    FILE_PATH = "trans.pdf"
-    output = rd(
-        project_id = "866827155501",
-        location = "us",
-        processor_id = "61abf4ec482095a0",
-        file_path = "trans.pdf",
-        mime_type = "application/pdf",
-        field_mask = "text, layout",
-        processor_version_id = "ad8664f46cdd7d84"
-    )
-    transcript = json.loads(parse_transcript())
-    # print(transcript)
+# if __name__ == "__main__":
+#     FILE_PATH = "trans.pdf"
+#     output = rd(
+#         project_id = "866827155501",
+#         location = "us",
+#         processor_id = "61abf4ec482095a0",
+#         file_path = "trans.pdf",
+#         mime_type = "application/pdf",
+#         field_mask = "text, layout",
+#         processor_version_id = "ad8664f46cdd7d84"
+#     )
+#     transcript = json.loads(parse_transcript(output))
 
-    major = CS()
-    level = 3 #current level
-    semester = 1 #current semester
-    year_group = 2024 #year of graduation
+#     major = CS()
+#     level = 3 #current level
+#     semester = 1 #current semester
+#     year_group = 2024 #year of graduation
 
-    student = Student(transcript, level, major, year_group, semester)
-    # reqs = student.major.get_requirements(year_group=year_group, level=level, semester=semester)
-    credits = student.evaluate_transcript()
+#     student = Student(transcript, level, major, year_group, semester)
+#     # reqs = student.major.get_requirements(year_group=year_group, level=level, semester=semester)
+#     credits = student.evaluate_transcript()
 
-    print(
-    f"""
-    Total Credits Attained = {credits["total_credits"]}
-    Failed Courses = {credits["failed"], "Number of failed courses: ", len(credits["failed"])}
-    Audit Status = {credits["track_status"]}
-    """)
+#     print(
+#     f"""
+#     Total Credits Attained = {credits["total_credits"]}
+#     Failed Courses = {credits["failed"], "Number of failed courses: ", len(credits["failed"])}
+#     Audit Status = {credits["track_status"]}
+#     """)
