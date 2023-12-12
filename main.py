@@ -1,3 +1,4 @@
+import functions_framework
 import os, tempfile, json
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -9,14 +10,18 @@ from process_text import parse_transcript as pt
 app = Flask(__name__)
 CORS(app)
 
+@functions_framework.http
+def entry_point(request):
+    if 'audit' in request.path and request.method == "POST":
+        return audit_transcript()
+
 @app.route("/audit", methods=["POST"])
 def audit_transcript():
     # Ensure that the required fields are present in the request
-    if "transcript" not in request.files or "level" not in request.form or "major" not in request.form or "year_group" not in request.form or "semester" not in request.form:
+    if "transcript" not in request.files or "major" not in request.form or "year_group" not in request.form or "semester" not in request.form:
         return "Incomplete student details provided", 400
 
     transcript_file = request.files["transcript"]
-    level = int(request.form["level"])
     major = request.form["major"]
     year_group = int(request.form["year_group"])
     semester = int(request.form["semester"])
@@ -64,10 +69,10 @@ def audit_transcript():
         return "Invalid major provided", 400
 
     # Initialize Student instance with provided details
-    student = Student(transcript_json, level, major_obj, year_group, semester)
+    student = Student(transcript_json, major_obj, year_group, semester)
     credits = student.evaluate_transcript()
 
-    return jsonify(credits)
+    return jsonify(credits), 200
 
 if __name__ == "__main__":
     app.run(debug=True)
