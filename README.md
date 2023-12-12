@@ -16,15 +16,17 @@ Laravel forms the backbone of the AshGradCheck application. Laravel's elegance i
 
 ### Database (MySQL):
 
-MySQL is chosen as the database management system, ensuring data integrity and efficient storage and retrieval of student records. Its compatibility with Laravel's Eloquent ORM streamlines database operations and enhances overall system performance. 
+MySQL is chosen as the database management system, ensuring data integrity and efficient storage and retrieval of student records. Its compatibility with Laravel's Eloquent ORM streamlines database operations and enhances overall system performance. With a focus on data integrity, MySQL ensures that student records are stored and retrieved accurately, providing a robust foundation for the AshGradCheck application. The choice of MySQL aligns seamlessly with Laravel's Eloquent ORM, forming a powerful duo that simplifies database operations and enhances overall system performance. This harmony between the database management system and Laravel's ORM not only ensures a smooth and consistent flow of data but also facilitates the implementation of complex database queries and relationships. In essence, MySQL plays a pivotal role in maintaining the integrity of student records, fostering efficient data handling, and contributing to the overall stability and responsiveness of the AshGradCheck application.
 
 
 ### OCR Tool (Google Document AI):
 
-The OCR functionality is powered by a customized Google Document AI tool, trained on our dataset of Ashesi University transcripts. Leveraging Google's state-of-the-art OCR capabilities, this tool extracts text data accurately from scanned transcripts.
-API Integration (Flask - Python):
+The OCR functionality is powered by a customized Google Document AI tool, trained on our dataset of Ashesi University transcripts. Leveraging Google's state-of-the-art OCR capabilities, this tool extracts text data accurately from scanned transcripts. Without this robust OCR tool, the extraction of crucial data from Ashesi University transcripts would be challenging. The accuracy and efficiency of this OCR tool ensures that users can seamlessly upload their transcripts, allowing the AshGradCheck application to evaluate their academic progress. As a result, students are able to receive personalized feedback on their academoic standing i.e., whether they are on-track for graduation. In essence, this OCR feature plays a pivotal role in providing users with a comprehensive and accurate degree audit, contributing significantly to the our application's core functionality and user experience.
 
-The backend functionality is exposed through a Flask API, implemented as a Google Cloud Function. Flask's lightweight and flexible nature, combined with seamless deployment on Google Cloud, ensures efficient microservices architecture and facilitates the integration of our system with other applications.
+
+### API Integration (Flask - Python):
+
+The business logic for accepting a users transcript and evaluating their graduation status is exposed through a Flask API, implemented as a Google Cloud Function. Flask's lightweight and flexible nature, combined with seamless deployment on Google Cloud, ensures efficient microservices architecture and facilitates the integration of our system with other applications.
 
 
 # AshGradCheck Software User Guide
