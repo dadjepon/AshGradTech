@@ -2,11 +2,7 @@ import json
 import re
 
 
-def parse_transcript() -> json:
-    file_path = "extracted.txt"
-    with open(file_path, "r", encoding="utf-8") as file:
-        text = file.read()
-    
+def parse_transcript(transcript) -> json:
     transcript_data = {}
     current_semester = None
     current_course = {}
@@ -16,7 +12,7 @@ def parse_transcript() -> json:
     credits_pattern = re.compile(r"^(?:\d+(?:\.\d+)?)$")
     course_title_pattern = re.compile(r"^[A-Za-z0-9\s\+\-'|?&/:,]+$")
 
-    for line in text.splitlines():
+    for line in transcript.splitlines():
         line = line.strip()
 
         # Identify semester

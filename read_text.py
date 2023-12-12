@@ -51,16 +51,5 @@ def process_document_sample(
 
     result = client.process_document(request=request)
 
-    with open("extracted.txt", "w", encoding="utf-8") as output_file:
-        output_file.write(result.document.text)
+    return result.document.text
 
-if __name__ == "__main__":
-    process_document_sample(
-        project_id = "866827155501",
-        location = "us",
-        processor_id = "61abf4ec482095a0",
-        file_path = "trans.pdf",
-        mime_type = "application/pdf",
-        field_mask = "text, layout",
-        processor_version_id = "ad8664f46cdd7d84"
-    )
