@@ -1,3 +1,33 @@
+# System Implementation
+
+### Technology & Justification
+
+For our implementation, the AshGradCheck system is built upon a scalable three-tier architecture, comprising a frontend, backend and a database. This architecture ensures a clear separation of concerns, making the application modular, maintainable and adaptable to future changes. The software stacks and tools selected for the individual tiers were chosen specifically to optimize performance, user experience and system reliability. In this section, we discuss the core functionalities of our software and the technologies that helped to successfully develop the system. 
+
+
+### FrontEnd - TailwindCSS
+For the frontend, the AshGradCheck system employs Tailwind CSS to utilize its utility-first approach. This aligns with our goal of developing a clean and responsive user interface. Aside from that, its modular nature makes it easy to customize and maintain during development. For the backend, we use PHP’s Laravel framework.
+Tailwind CSS is employed for the frontend, providing a utility-first approach that facilitates the creation of a responsive and visually appealing user interface. This modular CSS framework aligns with contemporary design principles, enhancing the overall user experience.
+
+
+Backend (Laravel - PHP):
+
+### BackEnd - Laravel(PHP)
+Laravel forms the backbone of the AshGradCheck application. Laravel's elegance in syntax, coupled with powerful features like the Eloquent ORM and Blade templating engine, ensured the efficient handling of client-side requests, data processing, and seamless communication between the frontend and the database.  Laravel's adoption of the MVC architectural pattern played a pivotal role in the success of the AshGradTech project. Laravel's MVC architecture (i.e., nModels, Views, Controllers) helped us to organize our codes to enhance a clear communication between our frontend and backend. The modular structure in Laravel streamlined our development, debugging, and maintenance for a more robust and scalable AshGradCheck application. This scalable structure in Laravel ensures that the AshGradCheck system can effortlessly accomodate future enhancements and changes in requirements, making it an efficient too, in the long-term development and growth of AshGradCheck.
+
+
+
+### Database (MySQL):
+
+MySQL is chosen as the database management system, ensuring data integrity and efficient storage and retrieval of student records. Its compatibility with Laravel's Eloquent ORM streamlines database operations and enhances overall system performance.
+OCR Tool (Google Document AI):
+
+The OCR functionality is powered by a customized Google Document AI tool, trained on our dataset of Ashesi University transcripts. Leveraging Google's state-of-the-art OCR capabilities, this tool extracts text data accurately from scanned transcripts.
+API Integration (Flask - Python):
+
+The backend functionality is exposed through a Flask API, implemented as a Google Cloud Function. Flask's lightweight and flexible nature, combined with seamless deployment on Google Cloud, ensures efficient microservices architecture and facilitates the integration of our system with other applications.
+
+
 # AshGradCheck Software User Guide
 
 Welcome to AshGradCheck, your comprehensive degree audit software. This guide will walk you through the steps to use the software effectively. Please follow the instructions carefully for a seamless experience.
@@ -9,6 +39,9 @@ Welcome to AshGradCheck, your comprehensive degree audit software. This guide wi
 4. [Uploading Transcript](#uploading-transcript)
 5. [Performing Degree Audit](#performing-degree-audit)
 6. [Logging Out and Future Access](#logging-out-and-future-access)
+  
+
+#### Technology & Justification<a name="technology--justification"></a>
 
 ### 1. Accessing MyCAMU and Downloading Transcript<a name="accessing-mycamu-and-downloading-transcript"></a>
 
@@ -57,6 +90,7 @@ After completing the audit, you can log out. Future access is easy:
 - **Login:** When returning, use the credentials you provided during the sign-up process to log in. You can access results from your previous audits or perform new audits.
 
 Congratulations! You have successfully used AshGradCheck Software to perform a degree audit. If you have any questions or encounter issues, please refer to the provided support resources or contact our helpdesk for assistance.
+
 
 
 
