@@ -19,7 +19,6 @@ class Student:
         total_credits= 0
         failed_courses = []
         status = ""
-        # num_semesters = sum(1 for semester in transcript.keys() if re.match(r'^Semester ?\d', semester))
         
         for semester in self.transcript:
             for course_code in self.transcript[semester]:
