@@ -5,14 +5,14 @@
 For our implementation, the AshGradCheck system is built upon a scalable three-tier architecture, comprising a frontend, backend and a database. This architecture ensures a clear separation of concerns, making the application modular, maintainable and adaptable to future changes. The software stacks and tools selected for the individual tiers were chosen specifically to optimize performance, user experience and system reliability. In this section, we discuss the core functionalities of our software and the technologies that helped to successfully develop the system. 
 
 
-### FrontEnd - TailwindCSS
+### Frontend - TailwindCSS
 For the frontend, the AshGradCheck system employs Tailwind CSS to utilize its utility-first approach. This aligns with our goal of developing a clean and responsive user interface. Aside from that, its modular nature makes it easy to customize and maintain during development. For the backend, we use PHP’s Laravel framework.
 Tailwind CSS is employed for the frontend, providing a utility-first approach that facilitates the creation of a responsive and visually appealing user interface. This modular CSS framework aligns with contemporary design principles, enhancing the overall user experience.
 
 
 Backend (Laravel - PHP):
 
-### BackEnd - Laravel(PHP)
+### Backend - Laravel(PHP)
 Laravel forms the backbone of the AshGradCheck application. Laravel's elegance in syntax, coupled with powerful features like the Eloquent ORM and Blade templating engine, ensured the efficient handling of client-side requests, data processing, and seamless communication between the frontend and the database.  Laravel's adoption of the MVC architectural pattern played a pivotal role in the success of the AshGradTech project. Laravel's MVC architecture (i.e., nModels, Views, Controllers) helped us to organize our codes to enhance a clear communication between our frontend and backend. The modular structure in Laravel streamlined our development, debugging, and maintenance for a more robust and scalable AshGradCheck application. This scalable structure in Laravel ensures that the AshGradCheck system can effortlessly accomodate future enhancements and changes in requirements, making it an efficient too, in the long-term development and growth of AshGradCheck.
 
 
