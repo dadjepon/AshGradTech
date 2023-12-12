@@ -1,13 +1,15 @@
 import json
+import datetime
+from datetime import datetime
 from process_text import parse_transcript
 from read_text import process_document_sample as rd
 from course_reqs import *
 
 class Student:
 
-    def __init__(self, transcript, level, major, year_group, semester):
+    def __init__(self, transcript, major, year_group, semester):
         self.transcript = transcript 
-        self.level = level
+        self.level = 4 - (year_group - datetime.now().year)
         self.major = major
         self.year_group = year_group
         self.semester = semester
