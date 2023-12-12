@@ -4,26 +4,34 @@
 
 For our implementation, the AshGradCheck system is built upon a scalable three-tier architecture, comprising a frontend, backend, and a database. This architecture ensures a clear separation of concerns, making the application modular, maintainable, and adaptable to future changes. The software stacks and tools selected for the individual tiers were chosen specifically to optimize performance, user experience, and system reliability. In this section, we discuss the core functionalities of our software and the technologies that helped successfully develop the system.
 
-### Frontend - Tailwind CSS 🎨
+<details>
+  <summary style="background-color: #d3d3d3;">Frontend - Tailwind CSS 🎨</summary>
+  
+  The AshGradCheck system employs Tailwind CSS for the frontend to utilize its utility-first approach. This aligns with our goal of developing a clean and responsive user interface. The modular nature of Tailwind CSS makes it easy to customize and maintain during development. The framework facilitates the creation of a responsive and visually appealing user interface, aligning with contemporary design principles. The use of "sr-only" classes enhances accessibility, making AshGradCheck inclusive and user-friendly for individuals with visual impairments.
+</details>
 
-The AshGradCheck system employs Tailwind CSS for the frontend to utilize its utility-first approach. This aligns with our goal of developing a clean and responsive user interface. The modular nature of Tailwind CSS makes it easy to customize and maintain during development. The framework facilitates the creation of a responsive and visually appealing user interface, aligning with contemporary design principles. The use of "sr-only" classes enhances accessibility, making AshGradCheck inclusive and user-friendly for individuals with visual impairments.
+<details>
+  <summary style="background-color: #d3d3d3;">Backend - Laravel (PHP) 🚀</summary>
+  
+  Laravel forms the backbone of the AshGradCheck application. Laravel's elegance in syntax, coupled with powerful features like the Eloquent ORM and Blade templating engine, ensures the efficient handling of client-side requests, data processing, and seamless communication between the frontend and the database. Laravel's adoption of the MVC architectural pattern organizes our code for clear communication between frontend and backend, streamlining development, debugging, and maintenance. This scalable structure ensures that AshGradCheck can effortlessly accommodate future enhancements, making it an efficient tool for long-term development and growth.
+</details>
 
-### Backend - Laravel (PHP) 🚀
+<details>
+  <summary style="background-color: #d3d3d3;">Database (MySQL) 🗃️</summary>
+  
+  MySQL is chosen as the database management system, ensuring data integrity and efficient storage and retrieval of student records. Its compatibility with Laravel's Eloquent ORM streamlines database operations and enhances overall system performance. MySQL plays a pivotal role in maintaining the integrity of student records, fostering efficient data handling, and contributing to the overall stability and responsiveness of the AshGradCheck application.
+</details>
 
-Laravel forms the backbone of the AshGradCheck application. Laravel's elegance in syntax, coupled with powerful features like the Eloquent ORM and Blade templating engine, ensures the efficient handling of client-side requests, data processing, and seamless communication between the frontend and the database. Laravel's adoption of the MVC architectural pattern organizes our code for clear communication between frontend and backend, streamlining development, debugging, and maintenance. This scalable structure ensures that AshGradCheck can effortlessly accommodate future enhancements, making it an efficient tool for long-term development and growth.
-
-### Database (MySQL) 🗃️
-
-MySQL is chosen as the database management system, ensuring data integrity and efficient storage and retrieval of student records. Its compatibility with Laravel's Eloquent ORM streamlines database operations and enhances overall system performance. MySQL plays a pivotal role in maintaining the integrity of student records, fostering efficient data handling, and contributing to the overall stability and responsiveness of the AshGradCheck application.
-
-### OCR Tool (Google Document AI) 🔍
+<details>
+  <summary style="background-color: #d3d3d3;">OCR Tool (Google Document AI) 🔍</summary>
 
 The OCR functionality is powered by a customized Google Document AI tool, trained on our dataset of Ashesi University transcripts. Leveraging Google's state-of-the-art OCR capabilities, this tool extracts text data accurately from scanned transcripts. This OCR feature plays a pivotal role in providing users with a comprehensive and accurate degree audit, contributing significantly to the application's core functionality and user experience.
 
-### API Integration (Flask - Python) 🐍
+<details>
+<summary style="background-color: #d3d3d3;">API Integration (Flask - Python) 🐍</summary>
 
 The business logic for accepting a user's transcript and evaluating their graduation status is exposed through a Flask API, implemented as a Google Cloud Function. Flask's lightweight and flexible nature, combined with seamless deployment on Google Cloud, ensures an efficient microservices architecture and facilitates the integration of our system with other applications.
-
+<details>
 
 
 
