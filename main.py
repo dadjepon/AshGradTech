@@ -19,9 +19,16 @@ def entry_point(request):
 @app.route("/audit", methods=["POST"])
 def audit_transcript():
     # Ensure that the required fields are present in the request
-    if "transcript" not in request.files or "major" not in request.form or "year_group" not in request.form or "semester" not in request.form:
-        return "Incomplete student details provided", 400
+    if "transcript" not in request.files:
+        return "Incomplete transcript", 400
+    elif "major" not in request.form:
+        return "Incomplete major", 400
+    elif "year_group" not in request.form:
+        return "Incomplete year", 400
+    elif "semester" not in request.form:
+        return "Incomplete semester", 400
 
+    #extract details from reponse body
     transcript_file = request.files["transcript"]
     major = request.form["major"]
     year_group = int(request.form["year_group"])
@@ -73,7 +80,11 @@ def audit_transcript():
     student = Student(transcript_json, major_obj, year_group, semester)
     credits = student.evaluate_transcript()
 
-    return jsonify(credits), 200
+    response = jsonify(credits)
+
+    #CORS config
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
 
 if __name__ == "__main__":
     app.run(debug=True)
