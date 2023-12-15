@@ -8,6 +8,17 @@ from degree_auditer import Student
 from read_text import process_document_sample as pds
 from process_text import parse_transcript as pt
 
+from google.cloud import firestore
+from firebase_admin import credentials, firestore, initialize_app
+
+# Initialize Firestore Database
+credential = credentials.Certificate('ashgradcheck-e11866cd0200.json')
+default_app = initialize_app(credential)
+
+#initializing the firestore client with the project ID
+db = firestore.client()
+
+
 app = Flask(__name__)
 CORS(app)
 
@@ -85,6 +96,37 @@ def audit_transcript():
     #CORS config
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
+
+
+@app.route("/email", methods=['POST'])  
+def send_email():
+    email = "aaron.tamakloe@ashesi.edu.gh"
+
+    student_name = request.json['name']
+    credits = request.json['credits']
+    year_group = request.json['year_group']
+    st_email = request.json['email']
+    
+    data = {
+      "to": email,
+      "message": {
+        "subject": "AshGradCheck: Degree Audit",
+        "text": f"""
+    Hello Emmanuel,   
+    {student_name}, a member of the class of {year_group} just completed their degree audit on AshGradCheck.
+    They have attained {credits} credits so far. AshGradCheck found that they are not on track.
+    Kindly follow up to assist getting them back on track.
+
+    Their email is {st_email}.
+
+    Best,
+    AshGradCheck"""
+      }
+    }
+
+    db.collection('mail').add(data)
+    
+    return "Email Sent", 200
 
 if __name__ == "__main__":
     app.run(debug=True)
