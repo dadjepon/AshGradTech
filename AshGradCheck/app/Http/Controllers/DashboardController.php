@@ -10,14 +10,16 @@ class DashboardController extends Controller
     public function __construct(){
         $this->middleware(['auth']);
     }
+    
     //Creating the index method
     public function index(){
-
-        // dd(auth()->user()->posts);
-        // showing the authenticated user
-        // dd(auth() -> user());
+        $user = auth()->user();
         $files = File::where('user_id', auth()->id())->get();
+
+        if ($user->hasRole('admin')) {
+            return view('admindashboard', compact('files'));
+        }
+
         return view('dashboard', compact('files'));
     }
-    
 }

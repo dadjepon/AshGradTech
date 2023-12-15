@@ -10,7 +10,7 @@
 
     <!-- Include Dropzone.js CSS -->
     <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" href="{{ asset('resources/css/admin.css') }}">    
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 </head>
 
@@ -192,7 +192,10 @@
         integrity="sha512-FFyHlfr2vLvm0wwfHTNluDFFhHaorucvwbpr0sZYmxciUj3NoW1lYpveAQcx2B+MnbXbSrRasqp43ldP9BKJcg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Your custom scripts section -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="filterTable.js"></script>
     @yield('scripts')
+
 </body>
 
 </html>

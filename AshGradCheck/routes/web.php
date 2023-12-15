@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\controllers\Auth\RegisterController;
 use App\Http\controllers\Auth\LoginController;
@@ -8,6 +9,12 @@ use App\Http\controllers\Auth\LogoutController;
 use App\Http\controllers\PostController;
 use App\Http\controllers\UploadController;
 use App\Http\controllers\EditProfileController;
+use App\Http\Controllers\TranscriptController;
+use App\Http\Controllers\DocumentAIController;
+use App\Models\File;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,3 +59,10 @@ Route::delete('/deletefile/{id}', [UploadController::class, 'deleteFile'])->name
 
 
 Route::get('/filecount', [UploadController::class, 'getFileCount'])->name('filecount');
+
+Route::put('/updateontrack/{id}', [UploadController::class, 'updateTrackStatus']);
+
+
+
+
+

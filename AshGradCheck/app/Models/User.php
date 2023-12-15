@@ -57,4 +57,10 @@ class User extends Authenticatable
     public function files(){
         return $this->hasMany(File::class);
     }
+
+    public function hasRole($role)
+    {
+        // Check if the user's roles contain the specified role
+        return in_array($role, explode(',', $this->role));
+    }
 }

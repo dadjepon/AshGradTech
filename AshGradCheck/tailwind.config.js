@@ -3,6 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 export default {
   content: [
     './resources/**/*.blade.php',
+    '.components/**/*.{js,ts,jsx,tsx}',
     './resources/**/*.js',
     './resources/**/*.vue',
     "./node_modules/flowbite/**/*.js",
@@ -10,6 +11,18 @@ export default {
 ],
   theme: {
     extend: {},
+    colors: {
+      backgroundColor: "#FCE7DA",
+      hoverColor: "#AA767C",
+      black: "#000000",
+      white: "#FFFFFF",
+      green: "#1DBC82",
+      red: "#D34053",
+      antiquewhite: "#fce7da",
+      inputColor: "#FFEEE3",
+      adminNavbarColor: "#FFEEE3",
+      adminBackgroundColor:"#FFF4ED",
+    },
   },
   
   fontFamily: {

@@ -21,16 +21,26 @@ class UploadController extends Controller
         $filename = time() . '_' . $file->getClientOriginalName();
         $file->storeAs('uploads', $filename, 'public'); // Save the file in the "public/uploads" directory
 
+
+        // Check a condition to determine on_track status
+        $onTrack = $this->checkOnTrackCondition($file);
         // Save file information to the database
         $user = Auth::user(); // Assuming you are using authentication
+
         $newFile = new File([
             'user_id' => $user->id,
             'name' => $filename,
-            // Add other fields as needed
+            'filepath' => asset('uploads/'.$filename), // Store the file path
+            'on_track' => $onTrack, // Default value for on_track status
         ]);
-        $newFile->save();
+
+    $newFile->save();
 
         return response()->json(['success' => true, 'message' => 'File uploaded successfully']);
+    }
+
+    private function checkOnTrackCondition($file){
+        return strpos($file->getClientOriginalName(), 'on_track') !== false;
     }
 
     public function getFiles()
@@ -62,5 +72,26 @@ class UploadController extends Controller
 
         return response()->json(['count' => $fileCount]);
     }
+
+
+    /**
+     * Update on_track status for a specific file.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function updateTrackStatus($id)
+{
+    $user = Auth::user();
+    $file = $user->files()->findOrFail($id);
+
+    // Assuming that the API response contains a field named 'track_status'
+    $trackStatus = request()->input('track_status');
+
+    // Update the on_track status in the database
+    $file->update(['on_track' => ($trackStatus === 'On Track')]);
+
+    return response()->json(['message' => 'On Track status updated successfully']);
 }
 
+}

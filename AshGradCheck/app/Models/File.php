@@ -11,7 +11,8 @@ class File extends Model
     protected $fillable = [
         'user_id',
         'name',
-        // Add other fillable fields
+        'filepath',
+        "on_track"
     ];
 
     public function user()
